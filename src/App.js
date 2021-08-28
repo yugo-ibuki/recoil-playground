@@ -9,12 +9,17 @@ import {
 import Counter from "./components/Counter";
 import SyncSelector from './components/SyncSelector';
 import NameDisplay from "./components/UseRecoiValue";
-import Form from './components/UseRecoilSetValue'
+import Form from './components/UseRecoilSetValue';
+import DebugObserver from "./debug/Debounce";
+import TimeTravelObserver from "./debug/snapshot";
+import ElementListItem from "./components/atomFamily";
+import SelectorFamilies from "./components/selecotorFamily";
 import './index.css';
 
 function App() {
   return (
     <RecoilRoot>
+      <DebugObserver />
       <div className="App">
         <div className="block">
           <h2>単純なカウンター</h2>
@@ -31,10 +36,18 @@ function App() {
         </div>
         <div className="block">
           <h2>useRecoilSetValueを用いたコンポーネント</h2>
-          <p></p>
           <Form />
         </div>
+        <div className="block">
+          <h2>atomFamilyを用いたコンポーネント</h2>
+          <ElementListItem />
+        </div>
+        <div className="block">
+          <h2>selectorFamilyを用いたコンポーネント</h2>
+          <SelectorFamilies />
+        </div>
       </div>
+      {/*<TimeTravelObserver />*/}
     </RecoilRoot>
   );
 }
