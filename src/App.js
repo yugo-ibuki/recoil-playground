@@ -14,6 +14,7 @@ import DebugObserver from "./debug/Debounce";
 import TimeTravelObserver from "./debug/snapshot";
 import ElementListItem from "./components/atomFamily";
 import SelectorFamilies from "./components/selecotorFamily";
+import DataLog from "./components/RecoilCallback";
 import './index.css';
 
 function App() {
@@ -45,6 +46,10 @@ function App() {
         <div className="block">
           <h2>selectorFamilyを用いたコンポーネント</h2>
           <SelectorFamilies />
+        </div>
+        <div className="block">
+          <h2>RecoilCallbackを用いたコンポーネント</h2>
+          <DataLog />
         </div>
       </div>
       {/*<TimeTravelObserver />*/}
