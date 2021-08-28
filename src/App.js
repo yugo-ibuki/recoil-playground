@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
+import Counter from "./components/Counter";
+import SyncSelector from './components/SyncSelector';
+import './index.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RecoilRoot>
+      <div className="App">
+        <div className="block">
+          <h2>単純なカウンター</h2>
+          <Counter />
+        </div>
+        <div className="block">
+          <h2>Selectorを用いたSyncSelector</h2>
+          <SyncSelector />
+        </div>
+      </div>
+    </RecoilRoot>
   );
 }
 
