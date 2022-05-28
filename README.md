@@ -1,6 +1,13 @@
-### `yarn start`
-[http://localhost:3000](http://localhost:3000).
+## Template
 
-### `yarn test`
+## up
 
-[running tests](https://facebook.github.io/create-react-app/docs/running-tests)
+```bash
+yarn dev
+```
+
+## local server
+
+```bash
+localhost:3000
+```
