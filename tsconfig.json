@@ -22,7 +22,8 @@
     "paths": {
       "@components/*": ["./src/components/*"],
       "@models/*": ["./src/models/*"],
-      "@libs/*": ["./src/libs/*"]
+      "@libs/*": ["./src/libs/*"],
+      "@recoil/*": ["./src/recoil/*"]
     }
   },
   "include": [

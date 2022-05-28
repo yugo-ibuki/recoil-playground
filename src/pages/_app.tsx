@@ -5,6 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from '../config/chakra'
 import { Header } from '@components/Layout/Header'
 import { LayoutWrapper } from '@components/Layout/LayoutWrapper'
+import { RecoilRoot } from 'recoil'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -13,13 +14,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Mogi App</title>
       </Head>
 
-      <ChakraProvider theme={theme}>
-        <Header />
+      <RecoilRoot>
+        <ChakraProvider theme={theme}>
+          <Header />
 
-        <LayoutWrapper>
-          <Component {...pageProps} />
-        </LayoutWrapper>
-      </ChakraProvider>
+          <LayoutWrapper>
+            <Component {...pageProps} />
+          </LayoutWrapper>
+        </ChakraProvider>
+      </RecoilRoot>
     </>
   )
 }
