@@ -15,7 +15,7 @@ export const todoActions: TodoActions = {
     useRecoilCallback(({ set }) => (label: string) => {
       set(todoState, (prev) => {
         const newItem: TodoItem = {
-          id: '1',
+          id: (prev.todos.length + 1).toString(),
           label
         }
         return {
@@ -34,7 +34,7 @@ export const todoActions: TodoActions = {
       (label: string) =>
         setState((prev) => {
           const newItem: TodoItem = {
-            id: '1',
+            id: (prev.todos.length + 1).toString(),
             label
           }
           return {
