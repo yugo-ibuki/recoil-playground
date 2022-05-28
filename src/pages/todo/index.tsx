@@ -1,19 +1,12 @@
 import type { ChangeEvent, FC } from 'react'
 import { Box, Button, Input } from '@chakra-ui/react'
-import { todoActions } from '@recoil/todo/todoActions'
-import { todoSelectors } from '@recoil/todo/todoSelector'
+import { todoActions } from '@recoil/todo/actions'
+import { todoSelectors } from '@recoil/todo/selector'
 import { useState } from 'react'
 
 const Todo: FC = () => {
   const [input, setInput] = useState('')
   const addTodo = todoActions.useAddTodoItem()
-
-  const onClick = () => {
-
-    // setInput(inputRef.current)
-    const result = addTodo(input)
-    console.log(result)
-  }
 
   return (
     <div>
@@ -25,7 +18,7 @@ const Todo: FC = () => {
         }}
       >
         <Input onChange={(e: ChangeEvent<HTMLInputElement>) => setInput(e.target.value)} />
-        <Button onClick={onClick}>ADD</Button>
+        <Button onClick={() => addTodo(input)}>ADD</Button>
       </Box>
 
       <div>

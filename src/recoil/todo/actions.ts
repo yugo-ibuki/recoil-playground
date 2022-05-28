@@ -1,15 +1,15 @@
 import { useCallback } from 'react'
 import { useRecoilCallback, useSetRecoilState } from 'recoil'
-import { todoState } from './todoState'
-import type { TodoItem } from './todoState'
+import { todoState } from './state'
+import type { TodoItem } from './state'
 
-type TodoActions = {
+type Actions = {
   useAddTodoItem: () => (label: string) => void
   // 同じ名前でエラーが出るので、2を付与しています。
   useAddTodoItem2: () => (label: string) => void
 }
 
-export const todoActions: TodoActions = {
+export const todoActions: Actions = {
   // Todoを追加する
   useAddTodoItem: () =>
     useRecoilCallback(({ set }) => (label: string) => {

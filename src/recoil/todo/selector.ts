@@ -1,5 +1,5 @@
-import type { TodoItem} from './todoState'
-import { todoState } from './todoState'
+import type { TodoItem} from './state'
+import { todoState } from './state'
 import { selector, selectorFamily, useRecoilValue } from 'recoil'
 import { RecoilSelectorKeys } from './key'
 
