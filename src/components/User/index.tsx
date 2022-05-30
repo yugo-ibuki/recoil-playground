@@ -3,8 +3,6 @@ import { userSelectors } from '@recoil/user/selector'
 
 export const User: FC = () => {
   const user = userSelectors.useGetUser()
-  console.log('↓user')
-  console.log(user)
   return (
     <div>
       <p>現在のユーザ: </p>

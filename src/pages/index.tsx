@@ -2,7 +2,8 @@ import type { NextPage } from 'next'
 import type { ChangeEvent} from 'react'
 import { useState } from 'react'
 import { todoActions } from '@recoil/todo/actions'
-import { Box, Button, Input } from '@chakra-ui/react'
+import { Box, Button, Input as CInput } from '@chakra-ui/react'
+import { Input } from '@components/Input'
 import { userActions } from '@recoil/user/actions'
 import { User } from '@components/User'
 import { TodoList } from '@components/TodoList'
@@ -22,7 +23,7 @@ const Home: NextPage = () => {
           gap: '16px',
         }}
       >
-        <Input onChange={(e: ChangeEvent<HTMLInputElement>) => setInput(e.target.value)} />
+        <Input setText={() => setInput} />
         <Button onClick={() => addTodo(input)}>ADD</Button>
       </Box>
 
@@ -34,7 +35,7 @@ const Home: NextPage = () => {
 
       <Box>
         <div className="flex gap-x-5">
-          <Input placeholder="input user id" onChange={(e: ChangeEvent<HTMLInputElement>) => setInput2(e.target.value)} />
+          <CInput placeholder="input user id" onChange={(e: ChangeEvent<HTMLInputElement>) => setInput2(e.target.value)} />
           <Button onClick={() => setUser(input2)}>ユーザセット</Button>
         </div>
         <User />
