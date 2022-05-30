@@ -1,5 +1,5 @@
 import { atom } from 'recoil'
-import { RecoilAtomKeys } from './key'
+import { RecoilAtomKeys } from '../key'
 
 export type TodoItem = {
   id: string

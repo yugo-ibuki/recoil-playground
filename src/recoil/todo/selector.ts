@@ -1,7 +1,7 @@
 import type { TodoItem} from './state'
 import { todoState } from './state'
 import { selector, selectorFamily, useRecoilValue } from 'recoil'
-import { RecoilSelectorKeys } from './key'
+import { RecoilSelectorKeys } from '../key'
 
 type TodoSelectors = {
   useTodos: () => TodoItem[]
