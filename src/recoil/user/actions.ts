@@ -8,16 +8,17 @@ type Actions = {
 
 export const userActions: Actions = {
   // Userを変更
-  useSetUser: () =>
-    useRecoilCallback(({ set }) => (userid: string) => {
+  useSetUser: () => {
+    return useRecoilCallback(({ set }) => (userid: string) => {
       set(userState, (prev) => {
         return {
           user: {
             ...prev.user,
             ...userMock,
             id: userid,
-          }
+          },
         }
       })
-    }, []),
+    }, [])
+  }
 }

@@ -3,6 +3,7 @@ import { userSelectors } from '@recoil/user/selector'
 
 export const User: FC = () => {
   const user = userSelectors.useGetUser()
+  console.log(user)
   return (
     <div>
       <p>現在のユーザ: </p>
@@ -11,6 +12,7 @@ export const User: FC = () => {
         <li>name: {user.name}</li>
         <li>age: {user.age}</li>
         <li>gender: {user.gender}</li>
+        <li>word: {user.word}</li>
       </ul>
     </div>
   )
