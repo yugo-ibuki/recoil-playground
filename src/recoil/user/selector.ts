@@ -6,10 +6,6 @@ import { WordState, wordState } from '@recoil/word/state'
 
 type UserWithWord = User & WordState
 
-type UserSelectors = {
-  useGetUser: () => UserWithWord
-}
-
 // Userを読み出す
 const userSelector = selector<UserWithWord>({
   key: RecoilSelectorKeys.USER_INFO,
@@ -22,6 +18,10 @@ const userSelector = selector<UserWithWord>({
     }
   }
 })
+
+type UserSelectors = {
+  useGetUser: () => UserWithWord
+}
 
 export const userSelectors: UserSelectors = {
   useGetUser: () => useRecoilValue(userSelector),
